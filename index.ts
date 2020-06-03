@@ -1,3 +1,5 @@
+import * as mapFunctional from './map.ts';
+
 export type num = number;
 export type bool = boolean;
 export type iter<T> = ArrayLike<T> | T[];
@@ -134,3 +136,6 @@ export function _concat<T>(array: T[], ...items: T[]): T[] {
 
 	return array;
 }
+
+export { mapFunctional };
+
