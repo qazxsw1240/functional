@@ -13,7 +13,6 @@ export function isNull<T>(object: T): bool {
 	return !object;
 }
 
-
 export function _each<T>(array: iter<T>, func: callback<T, void>): void {
 	let len = array.length;
 
@@ -48,6 +47,7 @@ export function _filter<T>(array: iter<T>, func: callback<T, bool>): T[] {
 
 	return res;
 }
+
 export function _curryeach<T>(func: callback<T, void>) {
 	return (array: iter<T>) => _each(array, func);
 }
@@ -56,8 +56,6 @@ export function _curryeach<T>(func: callback<T, void>) {
 export function _currymap<T, U>(func: callback<T, U>) {
 	return (array: iter<T>) => _map(array, func);
 }
-
-
 
 export function _curryfilter<T>(func: callback<T, bool>) {
 	return (array: iter<T>) => _filter(array, func);
